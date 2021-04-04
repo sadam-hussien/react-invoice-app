@@ -1,25 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+
+import {Provider} from "react-redux";
+
+import Store from "./store";
+
+import Aside from "./components/layout/aside/Aside";
+
+import Home from "./views/home/Home";
+
+import Invoice from "./views/invoice/Invoice";
 
 function App() {
+
+  // the title
+  useEffect( () => {
+
+    let lang = document.documentElement.getAttribute("lang");
+    if (lang === "en") {
+      document.title = "invoyz"
+    } else {
+      document.title = "الفواتير"
+    }
+
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <section className="page d-flex justify-content-end">
+
+          <Aside />
+
+          <section className="other-side">
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/invoice/:id" component={Invoice} />
+            </Switch>
+          </section>
+
+        </section>
+      </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+function ReduxProvider() {
+  return (
+    <Provider store={Store}>
+      <App />
+    </Provider>
+  )
+}
+
+export default ReduxProvider;

@@ -1,0 +1,54 @@
+@mixin status {
+    margin-bottom: 0;
+    text-transform: capitalize;
+    min-width: 110px;
+    font-size: $font-main-size-small;
+    font-weight: bold;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    position: relative;
+    color: $draft-color;
+    background: rgba($draft-color, .1);
+    margin-right: $medium-distance;
+
+    &.pending-status {
+        color: $pending-color;
+        background: rgba($pending-color, .1);
+        &::before {
+            background: $pending-color;
+        }
+    }
+    
+    &.paid-status {
+        color: $paid-color;
+        background: rgba($paid-color, .1);
+        &::before {
+            background: $paid-color;
+        }
+    }
+
+    &::before {
+        $size: 8px;
+        content: "";
+        display: block;
+        width: $size;
+        height: $size;
+        border-radius: 50%;
+        margin-right: $small-distance;
+        color: $draft-color;
+        background: $draft-color;
+    }
+}
+
+@mixin btn {
+    height: 45px;
+    padding: 0 $medium-distance;
+    font-size: $font-main-size-small;
+    border: none;
+    border-radius: 25px;
+    transition: all .3s;
+
+}

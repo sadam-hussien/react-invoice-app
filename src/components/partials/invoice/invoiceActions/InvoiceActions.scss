@@ -1,0 +1,96 @@
+@import "../../../../scss/vars/fonts";
+@import "../../../../scss/vars/colors";
+@import "../../../../scss/vars/other";
+@import "../../../../scss/helpers/mixins";
+
+.invoice-actions {
+    padding: $medium-distance;
+    background: $dark-bg-sub-color;
+    border-radius: 10px;
+    margin-bottom: $large-distance;
+
+    .status-wrapper {
+
+        span {
+            margin-right: $medium-distance;
+            text-transform: capitalize;
+            font-size: $font-main-size-small;
+        }
+        
+        .status {
+            @include status;
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+    }
+
+    .actions {
+        button {
+            height: 45px;
+            padding: 0 $medium-distance;
+            color: $light-text-color;
+            border: none;
+            border-radius: 25px;
+            text-transform: capitalize;
+            font-size: $font-main-size-small;
+            font-weight: bold;
+            transition: all .3s;
+
+
+            &:not(:last-child) {
+                margin-right: $medium-distance;
+            }
+
+            &.action-edit-btn {
+                background: $dark-bg-color;
+                &:hover {
+                    background: $light-text-color;
+                    color: $main-color;
+                }
+            }
+            &.action-delete-btn {
+                background: #e85757;
+                &:hover {
+                    background: #ed9696;
+                }
+            }
+            &.action-paid-btn {
+                background: $main-color;
+                &:hover {
+                    background: $sub-color;
+                }
+            }
+        }
+        
+        @media (max-width: 767px) {
+            margin-top: $medium-distance;
+            
+        }
+
+        @media (max-width: 420px) {
+            button {
+                &.action-delete-btn {
+                    margin-right: 0;
+                }
+
+                &.action-paid-btn {
+                    margin-top: $small-distance;
+                }
+            }
+        }
+    }
+
+    // **************************************** lang ******************************************
+    &:lang(ar) {
+        flex-direction: row-reverse;
+        text-align: right;
+        .status-wrapper {
+            flex-direction: row-reverse;
+            span {
+                margin-right: 0;
+                margin-left: $medium-distance;
+            }
+        }
+    }
+
+}

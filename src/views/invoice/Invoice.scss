@@ -1,0 +1,29 @@
+@import "../../scss/vars/other";
+@import "../../scss/vars/colors";
+@import "../../scss/vars/fonts";
+
+.invoice-page {
+
+    // strat go-back-btn
+    .go-back-btn {
+        margin-bottom: $large-distance;
+        display: flex;
+        align-items: center;
+        transition: all .5s;
+        span {
+            margin-left: $medium-distance;
+            color: $light-text-sub-color;
+            font-size: $font-main-size-small;
+            margin-bottom: -3px;
+            transition: all .5s;
+        }
+
+        &:hover {
+            span {
+                color: $light-text-color;
+            }
+        }
+    }
+    // ==== ed  go-back-btn
+
+}

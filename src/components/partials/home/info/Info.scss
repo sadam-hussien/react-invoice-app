@@ -1,0 +1,208 @@
+@import "../../../../scss/vars/other";
+@import "../../../../scss/vars/colors";
+@import "../../../../scss/vars/fonts";
+
+.info {
+    margin-bottom: $large-distance;
+
+    // start sub-info
+    .sub-info {
+        @media (max-width: 370px) {
+            text-align: center;
+        }
+        .title {
+            margin-bottom: 5px;
+        }
+        .total {
+            color: $light-text-sub-color;
+            font-size: $font-main-size-small;
+        }
+    }
+    // === end sub-info
+
+    // start info-options
+    .info-options {
+
+        @media (max-width: 767px) {
+            margin-top: $medium-distance;
+        }
+
+        @media (max-width: 370px) {
+            flex-direction: column-reverse;
+        }
+
+        // start filter-option
+        .filter-option {
+            margin-right: $medium-distance;
+
+            button {
+                all: unset;
+                font-size: $font-main-size-small;
+                cursor: pointer;
+                transition: all .5s;
+                .icon {
+                    margin-left: $small-distance;
+                    transition: transform .5s;
+                }
+
+                &:hover {
+                    color: $light-text-sub-color;
+                }
+            }
+
+            ul {
+                min-width: 180px;
+                padding: $medium-distance;
+                background: $dark-bg-sub-color;
+                border-radius: 5px;
+                top: 250%;
+                left: 0;
+                overflow: hidden;
+                opacity: 0;
+                z-index: -1;
+                transition: opacity .3s, top .5s;
+
+                &.active {
+                    overflow: visible;
+                    opacity: 1;
+                    top: 190%;
+                    z-index: 1;
+                }
+
+                li {
+                    $size: 15px;
+                    display: flex;
+                    align-items: center;
+                    &:not(:last-child) {
+                        margin-bottom: $medium-distance;
+                    }
+                    input {
+                        display: none;
+                    }
+                    label {
+                        cursor: pointer;
+                        font-size: $font-main-size-small;
+                        font-weight: bold;
+                        margin-bottom: 0;
+                        transition: all .5s;
+
+                        &::before {
+                            content: "";
+                            display: inline-block;
+                            width: $size;
+                            height: $size;
+                            background: rgba($dark-bg-color, .7);
+                            margin-right: $small-distance;
+                            border-radius: 2px;
+                            border: 2px solid transparent;
+                            transition: all .5s;
+                        }
+
+                        &:hover {
+                            color: $light-text-sub-color;
+                            &::before {
+                                border-color: $main-color;
+                            }
+                        }
+                    }
+
+                    input:checked ~ label {
+                        color: $light-text-sub-color;
+
+                        &::before {
+                            border-color: $main-color;
+                            background: $main-color;
+                        }
+                    }
+                }
+
+            }
+
+        }
+        // === end filter-option
+
+        // start add-invoice-btn
+        .add-invoice-btn {
+            $btn-size: 48px;
+            @media (max-width: 370px) {
+                margin-bottom: $medium-distance;
+            }
+            button {
+                height: $btn-size;
+                min-width: 120px;
+                padding: 0 $medium-distance 0 $small-distance;
+                background: $main-color;
+                border-radius: 25px;
+                border: none;
+                color: $light-text-color;
+                font-weight: bold;
+                font-size: $font-main-size-small;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: background .5s;
+                
+                span {
+                    margin-right: $small-distance;
+                    width: $btn-size - 15px;
+                    height: $btn-size - 15px;
+                    background: $light-text-color;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    background: $sub-color;
+
+                    span {
+                        .icon {
+                            fill: $sub-color;
+                        }
+                    }
+                }
+            }
+        }
+        // ==== end add-invoice-btn
+
+    }
+    // ==== end info-options
+
+    // ************************** lang ********************************************
+    &:lang(ar) {
+        direction: rtl;
+        text-align: right;
+
+        .info-options {
+            flex-direction: row-reverse;
+
+            @media (max-width: 370px) {
+                flex-direction: column-reverse;
+            }
+            .filter-option {
+                button {
+                    .icon {
+                        margin-left: 0;
+                        margin-right: $small-distance;
+                    }
+                }
+
+                ul li label {
+                    &::before {
+                        margin-right: 0;
+                        margin-left: $small-distance;
+                    }
+                }
+            }
+
+            .add-invoice-btn{
+                button {
+                    flex-direction: row-reverse;
+                }
+            }
+        }
+
+    }
+
+}

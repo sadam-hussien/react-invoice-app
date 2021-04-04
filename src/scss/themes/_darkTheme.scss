@@ -1,0 +1,93 @@
+.lighttheme {
+
+    body {
+        background: $light-bg-color;
+        color: $dark-text-color;
+    }
+
+    .info .sub-info .total {
+        color: $dark-text-sub-color;
+    }
+
+    .info .info-options .filter-option button {
+        font-weight: bold;
+    }
+
+    .invoices .invoice-item {
+        background: $light-text-color;
+        box-shadow: 0 0 10px rgba($dark-text-color, .1);
+    }
+
+    .invoices .invoice-item {
+        .invoice-main-info {
+            .invoice-id {
+                color: $dark-text-color;
+            }
+            .invoice-due, .invoice-name {
+                color: $dark-text-sub-color;
+            }
+            
+        }
+        .invoice-status-info {
+            .invoice-price {
+                color: $dark-text-color;
+            }
+        }
+    }
+
+    .invoice-page .go-back-btn span {
+        color: $dark-text-color;
+        font-weight: bold;
+
+        &:hover {
+            color: $dark-text-sub-color;
+        }
+    }
+
+    .invoice-actions, .invoice-info {
+        background: $light-text-color;
+        box-shadow: 0 0 10px rgba($dark-text-color, .1);
+    }
+
+    .invoice-info .head .id .text {
+        color: $dark-text-color;
+    }
+    .invoice-info .head .id .text-desc {
+        color: $dark-text-sub-color;
+    }
+
+    .invoice-info .box .box-title {
+        color: $dark-text-color;
+    }
+
+    .invoice-info .box .box-inner {
+        color: $dark-text-sub-color;
+    }
+
+    .invoice-info .box .box-inner.name span:last-of-type {
+        color: $dark-text-color;
+    }
+
+    .invoice-info .items {
+        // background: $light-text-sub-color;
+    }
+
+    .add-invoice {
+        background: rgba($light-bg-color, .95);
+
+        .form-content {
+            label {
+                color: $dark-text-sub-color;
+            }
+
+            input, select {
+                background: #e2e2e2;
+                color: $main-color;
+
+            }
+        }
+    }
+
+
+
+}

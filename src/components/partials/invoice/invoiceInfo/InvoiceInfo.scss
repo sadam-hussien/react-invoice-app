@@ -1,0 +1,111 @@
+@import "../../../../scss/vars/other";
+@import "../../../../scss/vars/colors";
+@import "../../../../scss/vars/fonts";
+
+.invoice-info {
+    padding: $medium-distance;
+    background: $dark-bg-sub-color;
+    border-radius: 10px;
+
+    // start head
+    .head {
+        margin-bottom: $medium-distance;
+        .id {
+            .text {
+                color: $light-text-color;
+                margin-bottom: 3px;
+                span {
+                    color: $main-color;
+                }
+            }
+            .text-desc {
+                color: $light-text-sub-color;
+                margin-bottom: 0;
+            }
+        }
+    }
+    // ==== ed head
+
+    // start box
+    .box {
+        border-bottom: 1px solid rgba($light-text-color, .06);
+        padding: $medium-distance 0;
+
+        &.sender-info {
+            padding-top: 0;
+        }
+
+        .box-title {
+            margin-bottom: $small-distance;
+            position: relative;
+            color: $light-text-color;
+        }
+
+        
+        .box-inner {
+            font-size: $font-main-size-small;
+            margin-bottom: $small-distance;
+            color: $light-text-sub-color;
+            span:first-of-type {
+                min-width: 120px;
+                display: inline-block;
+                text-transform: capitalize;
+            }
+
+            span:last-of-type {
+                // color: $light-text-color;
+                font-weight: bold;
+            }
+
+            &.name {
+                span:last-of-type {
+                    color: $light-text-color;
+                    // font-weight: bold;
+                }
+            }
+        }
+
+    }
+    // ==== end box
+
+    // start items
+    .items {
+        padding: $medium-distance;
+        background: $dark-bg-color;
+        border-radius: 5px;
+        margin-top: $medium-distance;
+
+        .table {
+            margin-bottom: 0;
+
+            th {
+                padding: $small-distance;
+                color: $light-text-sub-color;
+                text-transform: capitalize;
+            }
+
+            td {
+                padding: $small-distance;
+                color: $light-text-color;
+                font-size: $font-main-size-small;
+            }
+            tfoot {
+                td {
+                    font-size: $font-main-size;
+                    font-weight: bold;
+                    color: $main-color;
+                }
+            }
+        }
+    }
+    // ==== end items
+
+    // ********************************************* lang *********************
+
+    // &:lang(ar) {
+    //     direction: rtl;
+    //     text-align: right;
+
+    // }
+
+}

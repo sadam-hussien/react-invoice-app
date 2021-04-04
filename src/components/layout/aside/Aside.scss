@@ -1,0 +1,122 @@
+@import "../../../scss/vars/other";
+@import "../../../scss/vars/colors";
+
+aside {
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: $aside-width;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: $dark-bg-sub-color;
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+    z-index: 999999999;
+
+    // start logo
+    .logo {
+    }
+    // ==== end logo
+
+    .option {
+        width: 100%;
+
+        // start toggle-lang
+        .toggle-lang {
+            button {
+                $size: 45px;
+                width: $size;
+                height: $size;
+                line-height: $size;
+                text-align: center;
+                border-radius: 50%;
+                background: transparent;
+                color: $light-text-sub-color;
+                border: none;
+                transition: color, .3s;
+                &:hover {
+                    color: $light-text-color;
+                }
+            }
+        }
+        // ==== end toggle-lang
+
+        // start toggle-theme
+        .toggle-theme {
+            border-bottom: 1px solid $light-text-very-sub-color;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: $large-distance $medium-distance;
+            margin-bottom: $medium-distance;
+
+            button {
+                all: unset;
+                cursor: pointer;
+                opacity: .5;
+                transition: opacity .5s;
+
+                &:hover {
+                    opacity: .8;
+                }
+            }
+        }
+        // ==== end toggle-theme
+
+        // start profile
+        .profile {
+            display: flex;
+            justify-content: center;
+            padding: 0 $medium-distance $medium-distance;
+
+            .the-profile {
+                $size: 38px;
+                width: $size;
+                height: $size;
+                border-radius: 50%;
+                background: $main-color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 5px;
+                box-shadow: 0 0 10px rgba($dark-bg-color, .5);
+            }
+        }
+        // ==== end profile
+
+    }
+
+    // ****************************** responsive
+    @media (max-width: 991px) {
+        width: 100vw;
+        height: $aside-height;
+
+        .logo {
+            img {
+
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .option {
+            width: auto !important;
+            display: flex;
+            align-items: center;
+            padding-right: $large-distance;
+            .toggle-theme {
+                padding: 0;
+                border: none;
+                margin-bottom: 0;
+                margin: 0 $medium-distance 0 $small-distance;
+            }
+            .profile {
+                padding: 0;
+            }
+        }
+    }
+
+
+}

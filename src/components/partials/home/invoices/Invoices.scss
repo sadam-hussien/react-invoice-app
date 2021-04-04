@@ -1,0 +1,83 @@
+@import "../../../../scss/vars/other";
+@import "../../../../scss/vars/colors";
+@import "../../../../scss/vars/fonts";
+@import "../../../../scss/helpers/mixins";
+
+.invoices {
+
+    .invoice-item {
+
+        &:not(:last-child) {
+            margin-bottom: $medium-distance;
+        }
+        background: $dark-bg-sub-color;
+        padding:  $medium-distance - 2px;
+        border-radius: 8px;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: border .3s;
+
+        &:hover {
+            border-color: $main-color;
+        }
+
+        // start invoice-main-info
+        .invoice-main-info {
+
+            .invoice-id {
+                font-size: $font-main-size-small;
+                margin-right: $medium-distance;
+                min-width: 75px;
+                color: $light-text-color;
+                span {
+                    color: $main-color;
+                }
+            }
+
+            .invoice-due {
+                color: $light-text-sub-color;
+                font-size: $font-main-size-small;
+                margin-right: $medium-distance;
+                min-width: 130px;
+            }
+
+            .invoice-name {
+                margin-bottom: 0;
+                text-transform: capitalize;
+                font-size: $font-main-size-small;
+                color: $light-text-color;
+
+                @media (max-width: 767px) {
+                    width: 100%;
+                    margin-top: $small-distance;
+                }
+            }
+
+        }
+        // ==== end invoice-main-info
+
+        // start invoice-status-info
+        .invoice-status-info {
+
+            @media (max-width: 767px) {
+                width: 100%;
+                margin-top: $medium-distance;
+            }
+
+            .invoice-price{
+                font-weight: bold;
+                margin-right: $medium-distance;
+                min-width: 120px;
+                text-align: left;
+                color: $light-text-color;
+            }
+
+            .status{
+                @include status;
+            }
+
+        }
+        // ==== end invoice-status-info
+
+    }
+}

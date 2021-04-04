@@ -1,0 +1,206 @@
+.add-invoice {
+    position: fixed;
+    top: 0; 
+    width: $page-width;
+    right: 0;
+    z-index: 9;
+    height: 100vh;
+    overflow-y: auto;
+    background: rgba($dark-bg-color, .95);
+    padding-top: 55px + 80px;
+
+    @media (max-width: 991px) {
+        width: 100vw;
+        
+    }
+
+    .add-invoice-title {
+        margin-bottom: $large-distance;
+        .title {
+            margin: 0;
+        }
+    }
+
+    .form-content {
+        position: relative;
+        
+        // start form-content-title
+        .form-content-title {
+            color: $main-color;
+            margin-bottom: $medium-distance;
+
+            .text {
+                margin-bottom: 0;
+            }
+        }   
+        // ===== end form-content-title
+
+        label {
+            color: $light-text-color;
+            font-size: $font-main-size-small;
+            margin-bottom: $small-distance;
+            display: block;
+        }
+
+        .bill-from-area, .bill-to-area {
+            margin-bottom: $large-distance;
+        }
+
+        .form-group {
+            margin-bottom: $medium-distance;
+        }
+
+        input, select {
+            $size: 45px;
+            height: $size;
+            background: $dark-bg-sub-color;
+            padding: 0 $medium-distance;
+            border: 1px solid rgba($light-text-color, .1);
+            border-radius: 5px;
+            color: $light-text-color;
+
+            &:hover, &:focus {
+                border-color: $main-color;
+            }
+        }
+
+        .insert-icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: $medium-distance;
+        }
+
+        .remove-item-btn {
+            button {
+                background: transparent;
+                padding: 0;
+                border: none;
+            }
+        }
+
+        .add-new-item-btn {
+            button {
+                min-width: 40%;
+                padding: 0 $medium-distance;
+                height: 45px;
+                border-radius: 25px;
+                border: none;
+                background: $dark-bg-sub-color;
+                color: $light-text-color;
+                font-weight: bold;
+                text-transform: capitalize;
+                transition: all .3s;
+
+                &:hover {
+                    background: $dark-bg-color;
+                }
+            }
+        }
+
+        .form-btns-handlers {
+            margin-top: $large-distance;
+            border-top: 1px solid rgba($light-text-color, .1);
+            padding-top: $large-distance;
+
+            button {
+                @include btn;
+                font-weight: bold;
+
+                &.discard {
+                    background: $light-text-color;
+                    color: $dark-bg-color;
+                    &:hover {
+                        background: $light-text-sub-color;
+                    }
+                }
+
+                &.saveasdraft {
+                    background: $light-text-color;
+                    margin-right: $medium-distance;
+                    color: $dark-bg-color;
+
+                    &:hover {
+                    }
+                }
+
+                &.saveandsend {
+                    background: $main-color;
+                    color: $light-text-color;
+
+                    &:hover {
+                        background: $sub-color;
+                    }
+                }
+
+            }
+
+            @media (max-width: 767px) {
+                .discard {
+                    margin-top: $medium-distance;
+                }
+            }
+
+            @media (max-width: 500px) {
+                .responsive-btns {
+                    display: flex;
+                    flex-direction: column-reverse;
+                    justify-content: center;
+                    align-items: center;
+
+                    .saveasdraft  {
+                        margin-right: 0 !important;
+                        margin-top: $medium-distance;
+                    }
+                }
+            }
+        }
+
+        .cancel-btn {
+            $size: 45px;
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: #e85757;
+            padding: 0;
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            border: none;
+            color: $light-text-color;
+            transform: rotate(45deg);
+            transition: all .3s;
+            font-size: 20px;
+            &:hover {
+                background: #ed9696;
+            }
+        }
+
+        .error {
+            // position: absolute;
+            color: #e85757;
+            font-size: .7rem;
+        }
+
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+    
+      /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+    
+      /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: $main-color;
+        border-radius: 20px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}

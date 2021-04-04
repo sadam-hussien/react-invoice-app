@@ -1,0 +1,15 @@
+export const MAKE_AS_PAID = "MAKE_AS_PAID";
+
+export const DELETE_INVOICE = "DELETE_INVOICE";
+
+export const SAVE_AND_SEND = "SAVE_AND_SEND";
+
+export const EDIT_INVOICE = "EDIT_INVOICE";
+
+export const TOGGLE_ADD_INVOICE = "TOGGLE_ADD_INVOICE";
+
+export const TOGGLE_LANG = "TOGGLE_LANG";
+
+export const TOGGLE_THEME = "TOGGLE_THEME";
+
+export const FILTER_BY_STATUS = "FILTER_BY_STATUS";

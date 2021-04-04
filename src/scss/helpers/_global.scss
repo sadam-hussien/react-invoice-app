@@ -1,0 +1,65 @@
+body {
+    font-family: $font-main-name;
+    font-size: $font-main-size;
+    font-weight: $font-main-bold;
+    overflow-x: hidden;
+    background: $dark-bg-color;
+    color: $light-text-color;
+}
+
+.other-side {
+    width: $page-width;
+    min-height: 100vh;
+
+    @media(max-width: 991px) {
+        padding-top: $aside-height;
+        width: 100vw;
+    }
+}
+
+.global-page {
+    padding-top: $large-distance + $medium-distance;
+    padding-bottom: $large-distance + $medium-distance;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    &:focus {
+        outline: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.swal2-container.swal2-center.swal2-backdrop-show {
+    background: rgba($dark-bg-color, .8);
+}
+
+.swal2-title {
+    color: $light-text-color !important;
+    font-size: 20px !important;
+}
+
+.swal2-html-container {
+    color: $light-text-sub-color;
+    line-height: 1.7;
+    font-size: $font-main-size-small;
+}
+
+.swal2-styled.swal2-confirm {
+    margin-right: $medium-distance !important;
+}
+
+.swal2-styled.swal2-confirm, .swal2-styled.swal2-cancel {
+    height: 45px !important;
+    padding: 0 20px !important;
+    color: $light-text-color !important;
+    border: none !important;
+    border-radius: 25px !important;
+    text-transform: capitalize !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+    transition: all .3s;
+}
